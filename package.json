@@ -1,0 +1,63 @@
+{
+  "name": "securityheaders",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "bin": "cli.js",
+  "main": "index.js",
+  "scripts": {
+    "format": "remark *.md -qfo && xo --fix",
+    "test": "xo && nyc ava",
+    "test:watch": "ava -v -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/update-notifier": "^5.1.0",
+    "@types/user-agents": "^1.0.2",
+    "ava": "^3.15.0",
+    "cheerio": "^1.0.0-rc.2",
+    "form-data": "^4.0.0",
+    "nyc": "^15.1.0",
+    "remark-cli": "^10.0.0",
+    "remark-cli-help": "^2.0.0",
+    "remark-usage": "^10.0.0",
+    "tough-cookie": "^4.0.0",
+    "ts-node": "^10.2.0",
+    "xo": "^0.44.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "figures": "^4.0.0",
+    "got": "^11.8.2",
+    "lodash": "^4.17.21",
+    "meow": "^10.1.1",
+    "neverthrow": "^4.2.2",
+    "update-notifier": "^5.1.0",
+    "user-agents": "^1.0.743"
+  },
+  "ava": {
+    "extensions": {
+      "js": true,
+      "ts": "module"
+    },
+    "nonSemVerExperiments": {
+      "configurableModuleFormat": true
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "usage",
+      "cli-help"
+    ]
+  },
+  "xo": {
+    "rules": {
+      "unicorn/prefer-node-protocol": "off"
+    }
+  }
+}
